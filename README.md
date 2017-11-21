@@ -1,2 +1,2 @@
-# Redux Simple Starter
-_Description: My first React App applying Redux_
+# React Simple Starter
+_Description: My first revision of React_
