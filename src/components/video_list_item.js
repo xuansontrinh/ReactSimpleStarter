@@ -14,14 +14,15 @@ export default class VideoListItem extends Component {
         return (
             <li 
                 onClick={() => this.props.onVideoSelect(this.video)}
-                className="list-group-item">
+                className="list-group-item"
+            >
                 <div className="video-list media">
                     <div className="media-left">
-                        <img className="media-object" src={this.video.snippet.thumbnails.default.url}/>
+                        <img className="media-object" src={this.video.snippet.thumbnails.default.url} />
                     </div>
 
                     <div className="media-body">
-                    <div className="media-heading">{this.video.snippet.title}</div>
+                        <div className="media-heading">{this.video.snippet.title}</div>
                     </div>
                 </div>
             </li>
