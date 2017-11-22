@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 
-export default class VideoDetail extends Component {
+import reducers from '../reducers';
+import {connect} from 'react-redux';
+
+class VideoDetail extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-
-        };
     }
 
     render() {
-        let video = this.props.video;
+        let video = this.props.activeVideo;
         let url = video ? `https://www.youtube.com/embed/${video.id.videoId}` : '';
         if (!video)
             return (
@@ -29,3 +28,16 @@ export default class VideoDetail extends Component {
         )
     }
 }
+
+
+function mapStateToProps(state) {
+    let av = state.activeVideo;
+    if (!state.activeVideo && state.videos) {
+        av = state.videos[0];
+    }
+	return {
+		activeVideo: av
+	};
+}
+
+export default connect(mapStateToProps)(VideoDetail);
