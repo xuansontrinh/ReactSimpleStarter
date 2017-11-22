@@ -14,7 +14,7 @@ class VideoList extends Component {
 
     render() {
         if (!this.props.videos)
-            return (<div>Please tupe some keywords to begin!</div>);
+            return (<div>Please type some keywords to begin!</div>);
         return (
             <ul className="col-md-4 list-group">
                 {this.props.videos.map((video) => <VideoListItem key={video.etag} video={video} onVideoSelect={this.props.selectVideo}/>)}
