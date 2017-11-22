@@ -13,12 +13,25 @@ class SearchBar extends Component {
 
   	render() {
     	return (
-      	<div className="search-bar">
-        	<input 
-          	value={this.props.term}
-            onChange={event => this.props.updateTerm(event.target.value)}
-            onKeyPress={event => {if (event.key === 'Enter') this.props.searchVideos(this.props.term)}} 
-			    />
+      	<div className="search-bar row">
+					<div className="col-md-11" style={{display: 'flex'}}>
+						<input 
+							value={this.props.term}
+							style={{flex: 1}}
+							onChange={event => this.props.updateTerm(event.target.value)}
+							onKeyPress={event => {if (event.key === 'Enter') this.props.searchVideos(this.props.term)}} 
+						/>
+					</div>
+					<div 
+						className="col-md-1"
+					>
+						<button 
+							className="btn btn-light"
+							onClick={() => this.props.searchVideos(this.props.term)}
+							>
+							<i className="material-icons">youtube_searched_for</i>
+						</button>
+					</div>
       	</div>
     	);
   	}
